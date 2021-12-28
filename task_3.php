@@ -1,24 +1,5 @@
 <?php
-
-$task_1 = array(
-    array(
-        'data' => 'Reports',
-        'tags' => 'reports file'
-    ),
-    array(
-        'data' => 'Analitics',
-        'tags' => 'analitics graphs'
-    ),
-    array(
-        'data' => 'Export',
-        'tags' => 'export download'
-    ),
-    array(
-        'data' => 'Storage',
-        'tags' => 'storage'
-    )
-);
-
+$task_3 = ['Главная', 'PHP', 'Функции'];
 ?>
 
 <!DOCTYPE html>
@@ -44,12 +25,11 @@ $task_1 = array(
 
 <body class="mod-bg-1 mod-nav-link ">
     <main id="js-page-content" role="main" class="page-content">
-
         <div class="col-md-6">
             <div id="panel-1" class="panel">
                 <div class="panel-hdr">
                     <h2>
-                        Задание № 1
+                        Задание № 3
                     </h2>
                     <div class="panel-toolbar">
                         <button class="btn btn-panel waves-effect waves-themed" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
@@ -58,30 +38,18 @@ $task_1 = array(
                 </div>
                 <div class="panel-container show">
                     <div class="panel-content">
-                        <div class="panel-content">
-                            <div class="bg-warning-100 border border-warning rounded">
-                                <div class="input-group p-2 mb-0">
-                                    <input type="text" class="form-control form-control-lg shadow-inset-2 bg-warning-50 border-warning" id="js-list-msg-filter" placeholder="Filter list">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text bg-warning-500 border-warning">
-                                            <i class="fal fa-search fs-xl"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
-                                    <?php
+                        <ol class="breadcrumb page-breadcrumb">
+                            <?php
 
-                                    foreach ($task_1 as  $value) {
-                                        echo "<li class='list-group-item'>
-                                        <span data-filter-tags='{$value['tags']}'>{$value['data']}</span>
-                                        </li>";
-                                    }
-
-                                    ?>
-                                </ul>
-                                <div class="filter-message js-filter-message mt-0 fs-sm"></div>
-                            </div>
-                        </div>
+                            foreach ($task_3 as $key => $value) {
+                                if ($key != count($task_3) - 1) {
+                                    echo "<li class='breadcrumb-item'><a href='#'>{$value}</a></li>";
+                                } else {
+                                    echo "<li class='breadcrumb-item active'>{$value}</li>";
+                                }
+                            }
+                            ?>
+                        </ol>
                     </div>
                 </div>
             </div>
