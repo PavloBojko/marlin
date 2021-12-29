@@ -1,5 +1,23 @@
 <?php
-$task_3 = ['Главная', 'PHP', 'Функции'];
+$task_3 = [
+    [
+        'title'=>'Главная',
+        'href'=>'./task_3.php'
+    ],
+    [
+        'title'=>'Товары',
+        'href'=>'./task_2.php'
+    ],
+    [
+        'title'=>'Ноутбуки',
+        'href'=>'./task_1.php'
+    ],
+    [
+        'title'=>'hp',
+        'href'=>'./task_3.php'
+    ]
+
+];
 ?>
 
 <!DOCTYPE html>
@@ -43,9 +61,9 @@ $task_3 = ['Главная', 'PHP', 'Функции'];
 
                             foreach ($task_3 as $key => $value) {
                                 if ($key != count($task_3) - 1) {
-                                    echo "<li class='breadcrumb-item'><a href='#'>{$value}</a></li>";
+                                    echo "<li class='breadcrumb-item'><a href='{$value['href']}'>{$value['title']}</a></li>";
                                 } else {
-                                    echo "<li class='breadcrumb-item active'>{$value}</li>";
+                                    echo "<li class='breadcrumb-item active'>{$value['title']}</li>";
                                 }
                             }
                             ?>
