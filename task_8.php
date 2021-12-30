@@ -1,23 +1,14 @@
 <?php
-$localhost = 'localhost';
-$userName = 'root';
-$pasvord = '';
-$dbname = 'marlin';
-
-
 $pdo = new PDO("mysql:host=localhost;dbname=marlin", "root", "");
 $sql = 'SELECT * FROM `users_tasks`';
 $statement = $pdo->prepare($sql);
-
-
-
 $statement->execute();
 $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 // echo '<pre>';
 // var_dump($users);
 // echo '</pre>';
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,40 +77,6 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
                                     <?php
                                     }
                                     ?>
-
-                                    <!-- <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>
-                                            <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                            <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                            <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                        <td>
-                                            <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                            <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                            <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Larry the Bird</td>
-                                        <td> Bird</td>
-                                        <td>@twitter</td>
-                                        <td>
-                                            <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                            <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                            <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                        </td>
-                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
