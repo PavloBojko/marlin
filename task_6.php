@@ -69,6 +69,11 @@ $task_5 = [
     <link rel="stylesheet" media="screen, print" href="css/fa-solid.css">
     <link rel="stylesheet" media="screen, print" href="css/fa-brands.css">
     <link rel="stylesheet" media="screen, print" href="css/fa-regular.css">
+    <style>
+        a.banned {
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body class="mod-bg-1 mod-nav-link ">
@@ -97,8 +102,8 @@ $task_5 = [
                                                 <?php echo $value['status_worc']; ?>
                                             </small>
                                         </h5>
-                                        <a href=<?php echo $value['href_twit']; ?> class="text-info fs-sm" target="_blank"><?php echo $value['twit_value']; ?></a> -
-                                        <a href=<?php echo $value['href_email']; ?> class="text-info fs-sm" target="_blank" title=<?php echo $value['a_title']; ?>><?php echo $value['icon']; ?></a>
+                                        <a href=<?php echo $value['href_twit']; ?> class="text-info fs-sm <?php echo !$value['status'] ? 'banned' : ''; ?>" target="_blank"><?php echo $value['twit_value']; ?></a> -
+                                        <a href=<?php echo $value['href_email']; ?> class="text-info fs-sm <?php echo !$value['status'] ? 'banned' : ''; ?>" target="_blank" title=<?php echo $value['a_title']; ?>><?php echo $value['icon']; ?></a>
                                     </div>
                                 </div>
                             <?php } ?>
