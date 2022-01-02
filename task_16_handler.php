@@ -5,7 +5,7 @@ echo '</pre>';
 
 $type = pathinfo($_FILES['imge']['name'], PATHINFO_EXTENSION);
 $filName = uniqid();
-$way = "./img/tasks/{$filName}.$type";
+$way = "img/tasks/{$filName}.$type";
 $tmp = $_FILES['imge']['tmp_name'];
 move_uploaded_file($tmp, $way);
 
