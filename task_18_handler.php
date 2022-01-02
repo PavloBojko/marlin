@@ -2,6 +2,7 @@
 echo '<pre>';
 var_dump($_FILES);
 echo '</pre>';
+// $pdo = new PDO("mysql:host=localhost;dbname=marlin", "root", "");
 
 // $type = pathinfo($_FILES['imge']['name'], PATHINFO_EXTENSION);
 // $filName = uniqid();
@@ -9,11 +10,11 @@ echo '</pre>';
 // $tmp = $_FILES['imge']['tmp_name'];
 // move_uploaded_file($tmp, $way);
 
-// $pdo = new PDO("mysql:host=localhost;dbname=marlin", "root", "");
-// $sql="INSERT INTO `images` (`image`) VALUES (:text)";
+
+// $sql = "INSERT INTO `images` (`image`) VALUES (:text)";
 // $statement = $pdo->prepare($sql);
-// $statement -> execute(['text'=>$way]);
-// header("location: /marlin/task_16.php");
+// $statement->execute(['text' => $way]);
+
 function upload($tmp, $name)
 {
 
@@ -27,5 +28,8 @@ function upload($tmp, $name)
     $statement = $pdo->prepare($sql);
     $statement->execute(['text' => $way]);
 }
-upload($_FILES['imge']['tmp_name'], $_FILES['imge']['name']);
-header("location: /marlin/task_16.php");
+$count = count($_FILES['imge']['name']);
+for ($i = 0; $i < $count; $i++) {
+    upload($_FILES['imge']['tmp_name'][$i], $_FILES['imge']['name'][$i]);
+}
+header("location: /marlin/task_18.php");
